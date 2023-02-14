@@ -1,8 +1,6 @@
 import time
 from appium import webdriver
 from selenium.webdriver.common.by import By
-from appium.webdriver.common.appiumby import AppiumBy
-from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import uiautomator2
@@ -31,23 +29,7 @@ driver.press_keycode(66)
 
 time.sleep(7)
 
-"""
-Still don't know how to make this work yet...
-
-Found the solution: 
-from appium.webdriver.common.appiumby import AppiumBy
-driver.find.element(AppiumBy.ANDROID_UIAUTOMATOR,'')
-
-driver.find_element_by_uiautomator('new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains("Air Huaraches").instance(0))')
-driver.find_element(By.uiautomator2,'new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains("Air Huaraches").instance(0))').click()
-
-# scroll until find this -> Text -> click
-"""
-
-# Scrolls down until find the element, then it perform the click
-driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains("Adidas Samba Vegan").instance(0))').click()
-
-#ScrollUtil.swipeUp(3, driver)
+ScrollUtil.swipeUp(3, driver)
 
 """ 
 driver.swipe(600, 1700, 600, 500, 1000)
